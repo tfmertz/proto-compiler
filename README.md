@@ -15,7 +15,7 @@ extending the configuration and adding additional language plugins.
 
 To compile, change into the directory containing your `.proto` files and run:
 ```
-docker run -v `pwd`:/home tfmertz/proto_compiler --go_out=. *.proto
+docker run -v `pwd`:/home tfmertz/proto-compiler --go_out=. *.proto
 ```
 
 This will download the image, bring up a container, mount your current directory with the
@@ -25,7 +25,7 @@ that are provided.
 The container only runs the `protoc` command, you have complete control over any flags
 or parameters that you may want to pass:
 ```
-docker run -v <path_to_your_proto>:/home tfmertz/proto_compiler [flags] OUTPUT
+docker run -v <path_to_your_proto>:/home tfmertz/proto-compiler [flags] OUTPUT
 ```
 
 You can replace the absolute path to your proto files, flags, or the output file name if
@@ -35,7 +35,7 @@ you need to. You can find more information [here](https://github.com/golang/prot
 
 If you'd like to use the the gRPC plugin you can do so with the following flags:
 ```
-docker run -v `pwd`:/home tfmertz/proto_compiler --go_out=plugins=grpc:. *.proto
+docker run -v `pwd`:/home tfmertz/proto-compiler --go_out=plugins=grpc:. *.proto
 ```
 
 Happy compiling!
